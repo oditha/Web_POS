@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/webpos</property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">Odkwttr9750917*</property>
+
+        <mapping class="ORM.Department"/>
+        <mapping class="ORM.Grn"/>
+        <mapping class="ORM.Bankaccounts"/>
+        <mapping class="ORM.Cashbook"/>
+        <mapping class="ORM.Cashbooktypes"/>
+        <mapping class="ORM.Category"/>
+        <mapping class="ORM.Company"/>
+        <mapping class="ORM.Customerpaymentcheque"/>
+        <mapping class="ORM.Customerpayments"/>
+        <mapping class="ORM.Customers"/>
+        <mapping class="ORM.Employees"/>
+        <mapping class="ORM.GrnItems"/>
+        <mapping class="ORM.Invoice"/>
+        <mapping class="ORM.Invoiceitems"/>
+        <mapping class="ORM.Poitems"/>
+        <mapping class="ORM.Products"/>
+        <mapping class="ORM.Purchaseorder"/>
+        <mapping class="ORM.Stock"/>
+        <mapping class="ORM.Stockmaintain"/>
+        <mapping class="ORM.Supplierpaymentcheque"/>
+        <mapping class="ORM.Supplierpayments"/>
+        <mapping class="ORM.Suppliers"/>
+        <mapping class="ORM.Units"/>
+        <mapping class="ORM.Users"/>
+
+
+        <!--<property name="hibernate.hbm2ddl.auto">validate</property>-->
+
+
+    </session-factory>
+</hibernate-configuration>

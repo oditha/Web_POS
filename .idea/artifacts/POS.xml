@@ -1,0 +1,27 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="POS">
+    <output-path>$PROJECT_DIR$/out/artifacts/POS</output-path>
+    <root id="archive" name="POS.war">
+      <element id="javaee-facet-resources" facet="web_pos/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="web_pos" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="JPA 2.0-2.0" />
+          <element id="library" level="project" name="Hibernate 5.2.16-5.2.16" />
+          <element id="library" level="project" name="Struts 2-2.5.14.1" />
+          <element id="library" level="project" name="org.json:json:20140107" />
+          <element id="library" level="project" name="antlr-2.7.7" />
+          <element id="library" level="project" name="google-api-client-1.25.0" />
+          <element id="library" level="project" name="google-api-services-oauth2-v1-rev145-1.25.0" />
+          <element id="library" level="project" name="mongo-java-driver-3.0.0" />
+          <element id="library" level="project" name="barbecue-1.5-beta1" />
+          <element id="library" level="project" name="struts2-jasperreports-plugin-2.5.17" />
+          <element id="library" level="project" name="javax.mail-api-1.6.2" />
+          <element id="library" level="project" name="javax.mail-1.6.2" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

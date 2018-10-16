@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="barbecue-1.5-beta1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jasper/barbecue-1.5-beta1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jasper/commons-beanutils-1.9.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jasper/commons-collections-3.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jasper/commons-digester-2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jasper/commons-logging-1.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jasper/groovy-all-2.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jasper/iReport.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jasper/itext-4.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jasper/jasperreports-6.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jasper/jcommon-1.0.16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jasper/jdt-compiler-3.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jasper/jfreechart-1.0.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jasper/mysql.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

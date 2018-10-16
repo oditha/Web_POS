@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <package name="default" extends="struts-default">
+        <!--handle actions-->
+        <!--login action-->
+        <interceptors>
+            <interceptor class="Interceptor.LoginAuthentication" name="loginInterceptor"/>
+            <interceptor-stack name="loginStack">
+                <interceptor-ref name="loginInterceptor"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="loginStack"/>
+
+        <global-results>
+            <result name="login">/login.jsp</result>
+        </global-results>
+
+
+        <!--end of intercepter-->
+
+
+        <action name="dashboard">
+            <result>
+
+                /index.jsp
+
+            </result>
+        </action>
+
+
+        <action name="login">
+            <result>
+
+                /login.jsp
+
+            </result>
+        </action>
+
+        <action name="SignUp">
+            <interceptor-ref name="defaultStack"/>
+            <result>
+
+                /signup.jsp
+
+            </result>
+        </action>
+        <action name="CheckStartup" class="Actions.LoginPage.StartUpAction">
+            <result name="done" type="stream">
+                <param name="inputName">is</param>
+                /Login.jsp?login=false
+            </result>
+        </action>
+
+        <!--Nav Router-->
+        <action name="View*">
+            <result>
+
+                /pages/View{1}.jsp
+
+            </result>
+        </action>
+        <action name="Add*">
+            <result>
+
+                /pages/Add{1}.jsp
+
+            </result>
+        </action>
+        <action name="CompanySettings">
+            <result>
+
+                /pages/CompanySettings.jsp
+
+            </result>
+        </action>
+
+        <action name="DepartmentSettings">
+            <result>
+
+                /pages/DepartmetSettings.jsp
+
+            </result>
+        </action>
+        <action name="UserSettings">
+            <result>
+
+                /pages/UserSettings.jsp
+
+            </result>
+        </action>
+
+        <action name="SaveCompanyStartup" class="Actions.LoginPage.SaveCompanyAction">
+            <result name="done" type="stream">
+                <param name="inputName">inputStream</param>
+
+                /login.jsp
+
+            </result>
+        </action>
+
+        <action name="UserLogin" class="Actions.LoginPage.LoginAction">
+            <result name="OK">
+
+                /index.jsp
+
+            </result>
+        </action>
+
+        <action name="SaveDepartment" class="Actions.Settings.SaveDepartmentAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/DepartmetSettings.jsp
+
+            </result>
+        </action>
+
+        <action name="LoadDepartments" class="Actions.Settings.LoadDepartmentAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/DepartmetSettings.jsp
+
+            </result>
+        </action>
+        <action name="UpdateDepartment" class="Actions.Settings.UpdateDepartmentAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/DepartmetSettings.jsp
+
+            </result>
+        </action>
+        <action name="DeleteDepartment" class="Actions.Settings.DeleteDepartmentAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/DepartmetSettings.jsp
+
+            </result>
+        </action>
+
+        <action name="loadDepartmentscate" class="Actions.Settings.LoadDepartmentAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/AddCategory.jsp
+
+            </result>
+        </action>
+
+        <action name="saveCategory" class="Actions.Products.SaveCategoryAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/AddCategory.jsp
+
+            </result>
+        </action>
+        <action name="validateCategory" class="Actions.Products.ValidateCategoryCodeAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/AddCategory.jsp
+
+            </result>
+        </action>
+        <action name="loadCategories" class="Actions.Products.LoadCategoryAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/AddCategory.jsp
+
+            </result>
+        </action>
+        <action name="deleteCategories" class="Actions.Products.CategoryDeleteAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/AddCategory.jsp
+
+            </result>
+        </action>
+        <action name="genBarcode" class="Actions.Products.ProductsGenBarcodeAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/AddProducts.jsp
+
+            </result>
+        </action>
+        <action name="LoadDepartmentsProducts" class="Actions.Settings.LoadDepartmentAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/AddProducts.jsp
+
+            </result>
+        </action>
+        <action name="loadCategoryByDepartment" class="Actions.Products.ProductsLoadCategoryAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/AddProducts.jsp
+
+            </result>
+        </action>
+        <action name="saveUnit" class="Actions.Products.UnitSaveAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/AddProducts.jsp
+
+            </result>
+        </action>
+
+        <action name="loadUnits" class="Actions.Products.UnitLoadAllAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/AddProducts.jsp
+
+            </result>
+        </action>
+
+        <action name="saveProducts" class="Actions.Products.ProductSaveAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/AddProducts.jsp
+
+            </result>
+        </action>
+
+        <action name="loadAllProducts" class="Actions.Products.ProductsLoadAllAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/ViewProducts.jsp
+
+            </result>
+        </action>
+
+        <action name="productFilter" class="Actions.Products.ProductsFilterAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/ViewProducts.jsp
+
+            </result>
+        </action>
+
+        <action name="viewProducts" class="Actions.Products.ProductViewAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/ViewProducts.jsp
+
+            </result>
+        </action>
+
+        <action name="updateProduct" class="Actions.Products.ProductUpdateAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/ViewProducts.jsp
+
+            </result>
+        </action>
+
+        <action name="deleteProduct" class="Actions.Products.ProductDeleteAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/ViewProducts.jsp
+
+            </result>
+        </action>
+
+        <action name="viewStock" class="Actions.Stock.StockViewAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/ViewStock.jsp
+
+            </result>
+        </action>
+
+
+        <action name="viewStockRefill" class="Actions.Stock.StockRefillAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/ViewReorderRemainder.jsp
+
+            </result>
+        </action>
+
+
+        <action name="saveSupplier" class="Actions.Suppliers.SupplierSaveAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/AddSuppliers.jsp
+
+            </result>
+        </action>
+
+
+        <action name="loadSuppliers" class="Actions.GRN.GrnLoadSuppliersAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/AddGrn.jsp
+
+            </result>
+        </action>
+
+
+        <action name="loadProducts" class="Actions.GRN.GrnLoadProdcutsAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/AddGrn.jsp
+
+            </result>
+        </action>
+
+
+        <action name="saveGrn" class="Actions.GRN.GrnSaveAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/AddGrn.jsp
+
+            </result>
+        </action>
+
+
+        <action name="loadAllGrn" class="Actions.GRN.LoadAllGrnAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/ViewGrn.jsp
+
+            </result>
+        </action>
+
+
+        <action name="viewGrnRecord" class="Actions.GRN.GrnViewDataAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/ViewGrn.jsp
+
+            </result>
+        </action>
+
+
+        <action name="filterGrn" class="Actions.GRN.GrnFilterAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/ViewGrn.jsp
+
+            </result>
+        </action>
+
+
+        <action name="saveCustomer" class="Actions.Customers.AddCustomersAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/AddCustomers.jsp
+
+            </result>
+        </action>
+
+
+        <action name="loadCustomers" class="Actions.Invoice.LoadCustomersAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/AddInvoice.jsp
+
+            </result>
+        </action>
+
+
+        <action name="genInvoiceNo" class="Actions.Invoice.LoadInvoiceNoAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/AddInvoice.jsp
+
+            </result>
+        </action>
+
+
+        <action name="saveInvoice" class="Actions.Invoice.SaveInvoiceAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/AddInvoice.jsp
+
+            </result>
+        </action>
+
+
+        <action name="loadAllInvoice" class="Actions.Invoice.LoadAllInvoiceAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/ViewInvoice.jsp
+
+            </result>
+        </action>
+
+
+        <action name="viewInvoiceRecord" class="Actions.Invoice.ViewDataAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/ViewInvoice.jsp
+
+            </result>
+        </action>
+
+
+        <action name="saveUser" class="Actions.Settings.SaveUserAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /pages/UserSettings.jsp
+
+            </result>
+        </action>
+
+        <action name="register" class="Actions.Settings.SignUpAction">
+            <interceptor-ref name="defaultStack"/>
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /signup.jsp
+            </result>
+        </action>
+
+
+        <action name="saveWorks" class="Actions.Works.SaveWorksAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /index.jsp
+            </result>
+        </action>
+
+
+        <action name="loadUsers" class="Actions.Works.LoadAllEmpAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /ViewWorks.jsp
+            </result>
+        </action>
+
+
+        <action name="loadWorks" class="Actions.Works.ViewWorksAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /ViewWorks.jsp
+            </result>
+        </action>
+
+
+        <action name="filterWorks" class="Actions.Works.FilterWorksAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /ViewWorks.jsp
+            </result>
+        </action>
+
+        <action name="genOrderNo" class="Actions.Works.GenOrderNOAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /index.jsp
+            </result>
+        </action>
+
+
+        <action name="loadWidgets" class="Actions.Charts.WidgetChartAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /index.jsp
+            </result>
+        </action>
+
+        <action name="loadAccVise" class="Actions.Charts.AccViseChartAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /index.jsp
+            </result>
+        </action>
+
+        <action name="userViseBarChart" class="Actions.Charts.UserViseChartAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /index.jsp
+            </result>
+        </action>
+
+        <action name="userViseBarChartSandaru" class="Actions.Charts.UserViseChartSandaruAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /index.jsp
+            </result>
+        </action>
+
+        <action name="userViseBarChartDILL" class="Actions.Charts.UserViseChartDILLAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /index.jsp
+            </result>
+        </action>
+
+        <action name="userViseBarChartODK" class="Actions.Charts.UserViseChartODKAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /index.jsp
+            </result>
+        </action>
+
+        <action name="userViseBarChartSL" class="Actions.Charts.UserViseChartSLAction">
+            <result name="OK" type="stream">
+                <param name="inputName">inputStream</param>
+                /index.jsp
+            </result>
+        </action>
+
+    </package>
+
+
+</struts>

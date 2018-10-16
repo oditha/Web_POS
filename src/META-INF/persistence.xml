@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="NewPersistenceUnit">
+        <mapping-file>ORM/Department.xml</mapping-file>
+        <mapping-file>ORM/Grn.xml</mapping-file>
+        <mapping-file>ORM/Bankaccounts.xml</mapping-file>
+        <mapping-file>ORM/Cashbook.xml</mapping-file>
+        <mapping-file>ORM/Cashbooktypes.xml</mapping-file>
+        <mapping-file>ORM/Category.xml</mapping-file>
+        <mapping-file>ORM/Company.xml</mapping-file>
+        <mapping-file>ORM/Customerpaymentcheque.xml</mapping-file>
+        <mapping-file>ORM/Customerpayments.xml</mapping-file>
+        <mapping-file>ORM/Customers.xml</mapping-file>
+        <mapping-file>ORM/Employees.xml</mapping-file>
+        <mapping-file>ORM/GrnItems.xml</mapping-file>
+        <mapping-file>ORM/Invoice.xml</mapping-file>
+        <mapping-file>ORM/Invoiceitems.xml</mapping-file>
+        <mapping-file>ORM/Poitems.xml</mapping-file>
+        <mapping-file>ORM/Products.xml</mapping-file>
+        <mapping-file>ORM/Purchaseorder.xml</mapping-file>
+        <mapping-file>ORM/Stock.xml</mapping-file>
+        <mapping-file>ORM/Stockmaintain.xml</mapping-file>
+        <mapping-file>ORM/Supplierpaymentcheque.xml</mapping-file>
+        <mapping-file>ORM/Supplierpayments.xml</mapping-file>
+        <mapping-file>ORM/Suppliers.xml</mapping-file>
+        <mapping-file>ORM/Units.xml</mapping-file>
+        <mapping-file>ORM/Users.xml</mapping-file>
+        <properties>
+            <property name="toplink.jdbc.url" value="jdbc:mysql://localhost:3306/webpos"/>
+            <property name="toplink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/webpos"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="openjpa.ConnectionURL" value="jdbc:mysql://localhost:3306/webpos"/>
+            <property name="openjpa.ConnectionDriverName" value="com.mysql.jdbc.Driver"/>
+            <property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306/webpos"/>
+            <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+        </properties>
+    </persistence-unit>
+</persistence>
